@@ -99,7 +99,7 @@ app.get('/uid/custom', (req, res) => {
     if (split_uid[split_uid.length - 1] == split_char) {
         split_uid = split_uid.slice(0, split_uid.length - 1);
     }
-    
+
     res.send(split_uid);
 });
 
