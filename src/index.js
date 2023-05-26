@@ -1,6 +1,7 @@
 /* UID API
  * An API to create UID's for web applications and other applications
  * Github: https://www.github.com/awesomelewis2007/uid_api
+ * License: GNU General Public License v3.0
  * By: Lewis Evans
  */
 
