@@ -7,7 +7,7 @@
 
 const express = require('express');
 const app = express();
-const port = 80;
+const port = 8000;
 
 const version = '1.0.0';
 
@@ -96,6 +96,10 @@ app.get('/uid/custom', (req, res) => {
         }
     }
 
+    if (split_uid[split_uid.length - 1] == split_char) {
+        split_uid = split_uid.slice(0, split_uid.length - 1);
+    }
+    
     res.send(split_uid);
 });
 
