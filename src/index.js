@@ -47,16 +47,16 @@ app.get('/uid', (req, res) => {
     const uidLength = 36;
     let uid = '';
     let split_char = '-';
-    
+
     // Generate the UID.
     for (let i = 0; i < uidLength; i++) {
         const randomIndex = Math.floor(Math.random() * chars.length);
         uid += chars[randomIndex];
     }
-    
+
     // Add dashes to the UID.
     uid = uid.slice(0, 8) + split_char + uid.slice(8, 12) + split_char + uid.slice(12, 16) + split_char + uid.slice(16, 20) + split_char + uid.slice(20, 32);
-    
+
     // Send the UID to the client.
     res.send(uid);
 });
