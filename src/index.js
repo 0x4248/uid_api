@@ -47,11 +47,17 @@ app.get('/uid', (req, res) => {
     const uidLength = 36;
     let uid = '';
     let split_char = '-';
+    
+    // Generate the UID.
     for (let i = 0; i < uidLength; i++) {
         const randomIndex = Math.floor(Math.random() * chars.length);
         uid += chars[randomIndex];
     }
+    
+    // Add dashes to the UID.
     uid = uid.slice(0, 8) + split_char + uid.slice(8, 12) + split_char + uid.slice(12, 16) + split_char + uid.slice(16, 20) + split_char + uid.slice(20, 32);
+    
+    // Send the UID to the client.
     res.send(uid);
 });
 
@@ -62,40 +68,52 @@ app.get('/uid/custom', (req, res) => {
     let split_every = 8;
     let uid = '';
 
+    // If the request includes a length parameter, set the length of the UID to that value
     if (req.query.length) {
         uidLength = req.query.length;
+
+        // If the UID length is longer than 10,000, return an error
         if (uidLength > 10000) {
             res.send('Error: UID length is too long');
         }
     }
 
+    // If the request includes a split_char parameter, set the split character to that value
     if (req.query.split_char) {
         split_char = req.query.split_char;
+
+        // If the split character is longer than 10 characters, return an error
         if (split_char.length > 10) {
             res.send('Error: Split char is too long');
         }
     }
 
+    // If the request includes a split_every parameter, set the split frequency to that value
     if (req.query.split_every) {
         split_every = req.query.split_every;
     }
 
+    // Generate the UID
     for (let i = 0; i < uidLength; i++) {
         const randomIndex = Math.floor(Math.random() * chars.length);
         uid += chars[randomIndex];
     }
 
+    // Add the split characters to the UID
     let split_uid = '';
     let split_uid_length = 0;
     for (let i = 0; i < uid.length; i++) {
         split_uid += uid[i];
         split_uid_length++;
+
+        // If the split frequency has been reached, add the split character
         if (split_uid_length == split_every) {
             split_uid += split_char;
             split_uid_length = 0;
         }
     }
 
+    // Remove a trailing split character, if necessary
     if (split_uid[split_uid.length - 1] == split_char) {
         split_uid = split_uid.slice(0, split_uid.length - 1);
     }
