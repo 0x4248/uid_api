@@ -35,6 +35,7 @@ const welcome_message = `
     <h2>Usage</h2>
     <p>GET /uid</p>
     <p>GET /uid/custom?length=36&split_char=-&split_every=8</p>
+    <p>Other API: <a href="https://www.github.com/lewisevans2007/api">https://www.github.com/lewisevans2007/api</a></p>
 </div>
 `
 
