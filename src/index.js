@@ -25,6 +25,21 @@ const welcome_message = `
         border-radius: 10px;
         background-color: #fff;
     }
+
+    @media (prefers-color-scheme: dark) {
+        body {
+            background-color: #121212;
+            color: #fff;
+        }
+
+        .content {
+            background-color: #1a1a1a;
+            box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+        }
+        a {
+            color: cyan;
+        }
+    }
 </style>
 <br>
 <div class="content">
