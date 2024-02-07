@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 const port = 8000;
 
-const version = '1.0.0';
+const version = '1.1.0';
 
 const welcome_message = `
 <style>
@@ -120,6 +120,10 @@ app.get('/uid/custom', (req, res) => {
     }
 
     res.send(split_uid);
+});
+
+app.get('/version', (req, res) => {
+    res.send(version);
 });
 
 app.listen(port, () => {
