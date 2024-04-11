@@ -1,8 +1,8 @@
 /* UID API
  * An API to create UID's for web applications and other applications
- * Github: https://www.github.com/lewisevans2007/uid_api
+ * Github: https://www.github.com/0x4248/uid_api
  * License: GNU General Public License v3.0
- * By: Lewis Evans
+ * By: 0x4248
  */
 
 const express = require('express');
@@ -46,11 +46,11 @@ const welcome_message = `
     <h1>UID API v${version}</h1>
     <hr>
     <p>An API to create UID's for web applications and other applications</p>
-    <p>Github: <a href="https://www.github.com/lewisevans2007/uid_api">https://www.github.com/lewisevans2007/uid_api</a></p>
+    <p>Github: <a href="https://www.github.com/0x4248/uid_api">https://www.github.com/0x4248/uid_api</a></p>
     <h2>Usage</h2>
     <p>GET /uid</p>
     <p>GET /uid/custom?length=36&split_char=-&split_every=8</p>
-    <p>Other API: <a href="https://www.github.com/lewisevans2007/api">https://www.github.com/lewisevans2007/api</a></p>
+    <p>Other API: <a href="https://www.github.com/0x4248/api">https://www.github.com/0x4248/api</a></p>
 </div>
 `
 
