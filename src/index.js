@@ -48,8 +48,8 @@ const welcome_message = `
     <p>An API to create UID's for web applications and other applications</p>
     <p>Github: <a href="https://www.github.com/0x4248/uid_api">https://www.github.com/0x4248/uid_api</a></p>
     <h2>Usage</h2>
-    <p>GET /uid</p>
-    <p>GET /uid/custom?length=36&split_char=-&split_every=8</p>
+    <p>GET <code>/uid</code></p>
+    <p>GET <code>/uid/custom?length=36&split_char=-&split_every=8</code></p>
     <p>Other API: <a href="https://www.github.com/0x4248/api">https://www.github.com/0x4248/api</a></p>
 </div>
 `
